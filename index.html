@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리들의 질문 게시판</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <h1>📚 우리들의 질문 게시판</h1>
+        <p>궁금한 것은 질문하고, 아는 것은 서로 답변해요!</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- 게시판 통계 -->
+    <section class="stats">
+        <div class="stat-card">
+            <span>전체 질문</span>
+            <strong id="totalQuestions">0</strong>
+        </div>
+        <div class="stat-card">
+            <span>전체 답변</span>
+            <strong id="totalAnswers">0</strong>
+        </div>
+        <div class="stat-card">
+            <span>답변 대기</span>
+            <strong id="waitingQuestions">0</strong>
+        </div>
+    </section>
+
+    <!-- 질문 작성 -->
+    <section class="write-section">
+        <h2>✏️ 질문 등록하기</h2>
+
+        <form id="questionForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subject">교과목</label>
+                    <select id="subject" required>
+                        <option value="">교과목 선택</option>
+                        <option value="전자회로">전자회로</option>
+                        <option value="디지털공학">디지털공학</option>
+                        <option value="반도체공학">반도체공학</option>
+                        <option value="프로그래밍">프로그래밍</option>
+                        <option value="전기전자기초">전기전자기초</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">작성자</label>
+                    <input type="text" id="author"
+                           placeholder="이름을 입력하세요" required maxlength="20">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="questionTitle">질문 제목</label>
+                <input type="text" id="questionTitle"
+                       placeholder="질문 제목을 입력하세요" required maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label for="questionContent">질문 내용</label>
+                <textarea id="questionContent" rows="4"
+                    placeholder="궁금한 내용을 자세하게 작성해 주세요."
+                    required maxlength="3000"></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn">
+                질문 등록하기
+            </button>
+        </form>
+    </section>
+
+    <!-- 질문 목록 -->
+    <section class="board-section">
+        <div class="board-heading">
+            <div>
+                <h2>💬 질문 및 답변</h2>
+                <p>서로 배우고 함께 성장하는 공간입니다.</p>
+            </div>
+        </div>
+
+        <div class="search-area">
+            <input type="text" id="searchInput"
+                   placeholder="질문 제목 또는 내용 검색">
+
+            <select id="filterSubject">
+                <option value="전체">전체 교과목</option>
+                <option value="전자회로">전자회로</option>
+                <option value="디지털공학">디지털공학</option>
+                <option value="반도체공학">반도체공학</option>
+                <option value="프로그래밍">프로그래밍</option>
+                <option value="전기전자기초">전기전자기초</option>
+                <option value="기타">기타</option>
+            </select>
+
+            <select id="sortOrder">
+                <option value="latest">최신순</option>
+                <option value="answers">답변 많은 순</option>
+            </select>
+        </div>
+
+        <div class="board-layout">
+
+            <!-- 질문 리스트 -->
+            <div class="question-list" id="questionList">
+                <!-- JavaScript에서 질문 목록 출력 -->
+            </div>
+
+            <!-- 질문 상세 내용 -->
+            <div class="detail-panel" id="detailPanel">
+                <div class="empty-detail">
+                    <div class="empty-icon">📖</div>
+                    <h3>질문을 선택해 주세요</h3>
+                    <p>질문을 클릭하면 상세 내용과 답변을 확인할 수 있습니다.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>우리들의 질문 게시판 | 함께 질문하고 함께 성장해요.</p>
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

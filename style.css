@@ -1,0 +1,425 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "맑은 고딕", Arial, sans-serif;
+    background: #f3f6fb;
+    color: #25334a;
+}
+
+.header {
+    background: linear-gradient(135deg, #183b70, #3275c9);
+    color: white;
+    padding: 35px 20px;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.header p {
+    margin: 0;
+    color: #dceaff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* 통계 */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card span {
+    color: #75849b;
+    font-size: 14px;
+}
+
+.stat-card strong {
+    font-size: 27px;
+    color: #2465b5;
+}
+
+/* 공통 섹션 */
+
+.write-section,
+.board-section {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    color: #25334a;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #347bd0;
+    box-shadow: 0 0 0 3px rgba(52,123,208,0.1);
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2869b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #174d91;
+}
+
+/* 게시판 */
+
+.board-heading {
+    margin-bottom: 20px;
+}
+
+.board-heading p {
+    color: #8190a4;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.search-area {
+    display: grid;
+    grid-template-columns: 1fr 180px 130px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.board-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.question-item {
+    border: 1px solid #e3e9f1;
+    border-radius: 10px;
+    padding: 17px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.question-item:hover {
+    border-color: #4286d5;
+    background: #f8fbff;
+}
+
+.question-item.active {
+    border: 2px solid #347bd0;
+    background: #f2f7ff;
+}
+
+.question-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.subject-tag {
+    display: inline-block;
+    background: #eaf2ff;
+    color: #2869b9;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-tag {
+    font-size: 12px;
+    color: #e18b2b;
+    font-weight: bold;
+}
+
+.status-tag.complete {
+    color: #21966c;
+}
+
+.question-item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.question-item p {
+    font-size: 13px;
+    color: #8491a3;
+    margin: 0;
+}
+
+.question-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+    padding-top: 10px;
+    border-top: 1px solid #edf0f5;
+    color: #8491a3;
+    font-size: 12px;
+}
+
+/* 상세 패널 */
+
+.detail-panel {
+    border: 1px solid #e3e9f1;
+    border-radius: 12px;
+    padding: 23px;
+    min-height: 350px;
+    background: #fff;
+}
+
+.empty-detail {
+    text-align: center;
+    padding: 65px 15px;
+    color: #91a0b3;
+}
+
+.empty-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.empty-detail h3 {
+    color: #52627a;
+}
+
+.detail-subject {
+    margin-bottom: 15px;
+}
+
+.detail-title {
+    font-size: 21px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.detail-info {
+    font-size: 13px;
+    color: #8794a6;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9edf3;
+}
+
+.detail-content {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    padding: 15px 0 20px;
+    overflow-wrap: anywhere;
+}
+
+.delete-btn {
+    border: 1px solid #e4a2a2;
+    color: #d34e4e;
+    background: white;
+    border-radius: 6px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.answer-section {
+    border-top: 1px solid #e9edf3;
+    padding-top: 20px;
+}
+
+.answer-section h3 {
+    font-size: 17px;
+}
+
+.answer-item {
+    background: #f5f8fc;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.answer-item strong {
+    font-size: 13px;
+    color: #2869b9;
+}
+
+.answer-item p {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.answer-item small {
+    color: #96a1b1;
+}
+
+.answer-delete {
+    float: right;
+    border: none;
+    background: none;
+    color: #d34e4e;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.answer-form {
+    margin-top: 18px;
+}
+
+.answer-form input {
+    margin-bottom: 10px;
+}
+
+.answer-form textarea {
+    margin-bottom: 10px;
+}
+
+.answer-btn {
+    background: #2e9b78;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    cursor: pointer;
+}
+
+.answer-btn:hover {
+    background: #207b5e;
+}
+
+.empty-list {
+    text-align: center;
+    color: #9aa6b6;
+    padding: 40px 10px;
+}
+
+footer {
+    text-align: center;
+    color: #9aa6b6;
+    font-size: 13px;
+    padding: 20px;
+}
+
+/* 모바일 */
+
+@media (max-width: 800px) {
+    .board-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .search-area {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .stats {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 15px 10px;
+    }
+
+    .stat-card span {
+        font-size: 12px;
+    }
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .write-section,
+    .board-section {
+        padding: 17px;
+    }
+}
